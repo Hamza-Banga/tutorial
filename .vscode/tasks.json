@@ -1,0 +1,43 @@
+{
+    "version": "0.1.0",
+    "command": "npm",
+    "isShellCommand": true,
+    "showOutput": "always",
+    "suppressTaskName": true,
+    "tasks": [
+        {
+            // Build task, Ctrl+Shift+B
+            // "npm install --loglevel info"
+            "taskName": "install",
+            "isBuildCommand": true,
+            "args": ["install", "--loglevel", "info"]
+        },
+        {
+            "taskName": "update",
+            "args": ["update"]
+        },
+        {
+            // Test task, Ctrl+Shift+T
+            // "npm test"
+            "taskName": "test",
+            "isTestCommand": true,
+            "args": ["run", "test"]
+        },
+        {
+        // "npm run lint"
+        "taskName": "lint",
+        "args": ["run", "lint"]
+        },
+        {
+            "taskName": "init",
+            "command": "cmd.exe",
+            "args": [
+                "set PATH=%APPDATA%\\npm;%~dp0;%PATH%;.\\node_modules\\.bin"
+            ]
+        },
+        {
+            "taskName": "pretask",
+            "args": ["run", "pretask"]
+        }
+    ]
+}
